@@ -6,13 +6,33 @@ keys.forEach(function(key){
 })
 
 // Write named functions that change the color of the keys below
+const keyPlay = (event) => {
+    event.target.style.backgroundColor = 'purple';
+}
 
+const keyReturn = (event) => {
+    event.target.style.backgroundColor = '';
+}
 
 // Write a named function with event handler properties
 
+//// Codecademy's suggested approach is this:
+// const changeColour = (note) => {
+//     note.onmousedown = function() {
+//         keyPlay(event);
+//     }
+//     note.onmouseup = function() {
+//         keyReturn(event);
+//     }
+
+
+const changeColour = (note) => {    
+    note.addEventListener("mousedown", (event) => {keyPlay(event)});
+    note.addEventListener("mouseup", (event) => {keyReturn(event)});
+}
 
 // Write a loop that runs the array elements through the function
-
+notes.forEach(changeColour);
 
 // These variables store the buttons that progress the user through the lyrics
 let nextOne = document.getElementById('first-next-line');
