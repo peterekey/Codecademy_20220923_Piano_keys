@@ -49,13 +49,53 @@ nextThree.hidden = true;
 startOver.hidden= true;
 
 // Write anonymous event handler property and function for the first progress button
+nextOne.addEventListener(
+    "click",
+    (event) => {
+        nextTwo.hidden = false;
+        nextOne.hidden = true;
+        document.getElementById("letter-note-five").innerText = 'D';
+        document.getElementById("letter-note-six").innerText = 'C';
 
+    });
 
 // Write anonymous event handler property and function for the second progress button
-
+nextTwo.addEventListener(
+    "click",
+    (event) => {
+        nextThree.hidden = false;
+        nextTwo.hidden = true;
+        document.getElementById("word-five").innerText = "DEAR";
+        document.getElementById("word-six").innerText = "FRI-";
+        lastLyric.style.display = 'inline-block';   
+        document.getElementById("letter-note-three").innerText = "G";
+        document.getElementById("letter-note-four").innerText = "E";
+        document.getElementById("letter-note-five").innerText = "C";
+        document.getElementById("letter-note-six").innerText = "B";
+    }
+)
 
 // Write anonymous event handler property and function for the third progress button
-
+nextThree.addEventListener(
+    "click",
+    (event) => {
+        startOver.hidden = false;
+        nextThree.hidden = true;
+        document.getElementById("word-one").innerText = "HAP-";
+        document.getElementById("word-two").innerText = "PY";
+        document.getElementById("word-three").innerText = "BIRTH";
+        document.getElementById("word-four").innerText = "DAY";
+        document.getElementById("word-five").innerText = "TO";
+        document.getElementById("word-six").innerText = "YOU!";
+        document.getElementById("letter-note-one").innerText = "F";
+        document.getElementById("letter-note-two").innerText = "F"
+        document.getElementById("letter-note-three").innerText = "E";
+        document.getElementById("letter-note-four").innerText = "C";
+        document.getElementById("letter-note-five").innerText = "D";
+        document.getElementById("letter-note-six").innerText = "C";
+        lastLyric.style.display = 'none';
+    }
+)
 
 // This is the event handler property and function for the startOver button
 startOver.onclick = function() {
